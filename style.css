@@ -46,3 +46,49 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+.shelf {
+	background-color: #f3e5c1;
+	display: flex;
+	gap: 4px;
+	justify-content: center;
+}
+
+
+.book {
+	background-color: #6e4616;
+	min-height: 200px;
+	padding: 16px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin: 4px;
+	border-radius: 2px;
+}
+
+.book-info {
+	display: flex;
+	align-items: center;
+	margin-top: auto;
+}
+
+.book-info * {
+	writing-mode: vertical-lr;
+	transform: rotate(-180deg);
+	display: inline-block;
+	color:#fbffc0;
+}
+
+
+.book h1 {
+	font-size: x-large;
+}
+
+.book h2 {
+	font-size: large;
+}
+
+.book button{
+	margin-top: auto;
+}
