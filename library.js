@@ -28,7 +28,7 @@ function displayBooks() {
     const author = document.createElement('h2');
     author.textContent = book.author;
     const pages = document.createElement('h3');
-
+    pages.textContent = book.pages + " pages";
     const readStatus = document.createElement('p');
     readStatus.textContent = book.read ? "Read" : "Not read yet";
     const deleteButton = document.createElement('button');
