@@ -10,10 +10,10 @@ function Book(title, author, pages, read) {
 }   
 
 const myLibrary = [];
-const sampleBook = new Book('A fighting man of Mars','Edgar Rice Burroughs',138,false);
-myLibrary.push(sampleBook);
-const shelf = document.querySelector('.shelf');
-displayBooks();
+// const sampleBook = new Book('A fighting man of Mars','Edgar Rice Burroughs',138,false);
+// myLibrary.push(sampleBook);
+// const shelf = document.querySelector('.shelf');
+// displayBooks();
 
 
 function displayBooks() {
@@ -91,5 +91,5 @@ function toggleRead(e) {
     const index  = e.target.parentNode.dataset.index;
     let book = myLibrary[index];
     book.read = !book.read;
-    displayBooks();
+    displayBooks(); // Inefficient, Improve this!!
 }
