@@ -12,7 +12,7 @@ function Book(title, author, pages, read) {
 const myLibrary = [];
 // const sampleBook = new Book('A fighting man of Mars','Edgar Rice Burroughs',138,false);
 // myLibrary.push(sampleBook);
-// const shelf = document.querySelector('.shelf');
+const shelf = document.querySelector('.shelf');
 // displayBooks();
 
 
