@@ -10,10 +10,10 @@ function Book(title, author, pages, read) {
 }   
 
 const myLibrary = [];
-// const sampleBook = new Book('A fighting man of Mars','Edgar Rice Burroughs',138,false);
-// myLibrary.push(sampleBook);
-
+const sampleBook = new Book('A fighting man of Mars','Edgar Rice Burroughs',138,false);
+myLibrary.push(sampleBook);
 const shelf = document.querySelector('.shelf');
+displayBooks();
 
 
 function displayBooks() {
@@ -29,9 +29,15 @@ function displayBooks() {
         pages.textContent = book.pages + " pages";
         const readStatus = document.createElement('p');
         readStatus.textContent = book.read ? "Read" : "Not read yet";
+        
         const deleteButton = document.createElement('button');
         deleteButton.textContent = 'Delete';
         deleteButton.addEventListener('click',deleteBook);
+
+        const readButton = document.createElement('button');
+        readButton.textContent = book.read ? 'Unread(idk how you do that)' : 'Read';
+        readButton.addEventListener('click',toggleRead);
+
         const bookInfo = document.createElement('div');
         bookInfo.classList.add('book-info');
         bookInfo.append(title,author,pages,readStatus);
@@ -40,7 +46,8 @@ function displayBooks() {
         bookdiv.classList.add('book');
         bookdiv.dataset.index = i;        
         bookdiv.append(bookInfo); 
-        bookdiv.append(deleteButton);        
+        bookdiv.append(deleteButton);
+        bookdiv.append(readButton);     
         shelf.append(bookdiv);
     }
 
@@ -77,5 +84,12 @@ form.addEventListener('submit', createBookFromForm);
 function deleteBook(e) {
     const index = e.target.parentNode.dataset.index;
     myLibrary.splice(index, 1);
+    displayBooks();
+}
+
+function toggleRead(e) {
+    const index  = e.target.parentNode.dataset.index;
+    let book = myLibrary[index];
+    book.read = !book.read;
     displayBooks();
 }
