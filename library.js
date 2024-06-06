@@ -35,7 +35,7 @@ function displayBooks() {
         deleteButton.addEventListener('click',deleteBook);
 
         const readButton = document.createElement('button');
-        readButton.textContent = book.read ? 'Unread(idk how you do that)' : 'Read';
+        readButton.textContent = book.read ? 'Mark Unread(idk how you do that)' : 'Mark Read';
         readButton.addEventListener('click',toggleRead);
 
         const bookInfo = document.createElement('div');
