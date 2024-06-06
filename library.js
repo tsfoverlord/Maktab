@@ -59,6 +59,7 @@ const form = document.querySelector('dialog form');
 
 dialogClose.addEventListener('click', (e) => {
     e.preventDefault();
+    form.reset();
     dialog.close();
 });
 
